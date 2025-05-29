@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Denzzy Store</title>
+    <title>Denzzy Store - Pembayaran Lanjutan</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -11,6 +11,27 @@
             font-family: 'Inter', sans-serif;
             background-color: #f8f8f8; /* Latar belakang abu-abu sangat muda */
             color: #333; /* Warna teks utama */
+        }
+        /* Style untuk splash screen */
+        #splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #1a202c; /* Warna latar belakang gelap */
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999; /* Pastikan di atas semua elemen lain */
+            opacity: 1;
+            transition: opacity 0.5s ease-out; /* Transisi untuk fade out, dipercepat */
+        }
+        #splash-screen.hidden {
+            opacity: 0;
+            visibility: hidden;
         }
         /* Style untuk overlay menu mobile */
         .mobile-menu-overlay {
@@ -25,7 +46,7 @@
             transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
             opacity: 0;
             visibility: hidden;
-            overflow-y: auto;
+            overflow-y: auto; /* Overlay itu sendiri bisa di-scroll jika kontennya panjang */
         }
         .overlay-common.active {
             opacity: 1;
@@ -35,9 +56,24 @@
         html {
             scroll-behavior: smooth;
         }
+        /* Styling untuk bintang rating */
+        .star-rating .star {
+            cursor: pointer;
+            color: #ccc; /* Warna default bintang */
+            transition: color 0.2s ease-in-out;
+        }
+        .star-rating .star.filled {
+            color: #ffc107; /* Warna bintang yang terisi */
+        }
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
+    <div id="splash-screen">
+        <h1 class="text-5xl font-extrabold mb-4 animate-pulse">Denzzy Store</h1>
+        <p class="text-lg">Memuat pengalaman belanja terbaik...</p>
+        <div class="mt-8 animate-spin rounded-full h-12 w-12 border-b-2 border-white"></div>
+    </div>
+
     <header class="bg-white shadow-sm py-4 px-6 md:px-8 lg:px-12 rounded-b-lg">
         <div class="container mx-auto flex justify-between items-center">
             <a href="#" class="text-2xl font-bold text-gray-800 hover:text-gray-600 transition duration-300">
@@ -140,18 +176,25 @@
 
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl">
-                <img src="produk1.jpg" alt="Produk 1" class="w-full h-48 object-cover">
+                <img src="Produk1.jpg" alt="Produk 1" class="w-full h-48 object-cover">
                 <div class="p-5">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Jasa Edit Logo</h3>
-                    <p class="text-gray-600 text-sm mb-3"> Menggunakan Elemen Yang Dapat Membuat Logo Anda Menjadi Bergerak.</p>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Nama Produk Keren 1</h3>
+                    <p class="text-gray-600 text-sm mb-3">Deskripsi singkat produk ini.</p>
+                    <div class="flex items-center justify-center text-yellow-400 text-2xl mb-2 star-rating" data-rating="0">
+                        <span class="star" data-value="1">&#9733;</span>
+                        <span class="star" data-value="2">&#9733;</span>
+                        <span class="star" data-value="3">&#9733;</span>
+                        <span class="star" data-value="4">&#9733;</span>
+                        <span class="star" data-value="5">&#9733;</span>
+                    </div>
                     <div class="flex justify-between items-center mb-4">
-                        <span class="text-2xl font-bold text-blue-600">Rp 30.000</span>
-                        <span class="text-sm text-gray-500 line-through">Rp 50.000</span>
+                        <span class="text-2xl font-bold text-blue-600">Rp 150.000</span>
+                        <span class="text-sm text-gray-500 line-through">Rp 200.000</span>
                     </div>
                     <button class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300 font-medium add-to-cart-button"
                             data-product-id="prod001"
-                            data-product-name="Jasa Edit Logo"
-                            data-product-price="30000"
+                            data-product-name="Nama Produk Keren 1"
+                            data-product-price="150000"
                             data-product-image="https://placehold.co/100x100/D1E7DD/000000?text=Produk+Keranjang+1">
                         Tambah ke Keranjang
                     </button>
@@ -163,6 +206,13 @@
                 <div class="p-5">
                     <h3 class="text-xl font-semibold text-gray-800 mb-2">Nama Produk Keren 2</h3>
                     <p class="text-gray-600 text-sm mb-3">Deskripsi singkat produk ini.</p>
+                    <div class="flex items-center justify-center text-yellow-400 text-2xl mb-2 star-rating" data-rating="0">
+                        <span class="star" data-value="1">&#9733;</span>
+                        <span class="star" data-value="2">&#9733;</span>
+                        <span class="star" data-value="3">&#9733;</span>
+                        <span class="star" data-value="4">&#9733;</span>
+                        <span class="star" data-value="5">&#9733;</span>
+                    </div>
                     <div class="flex justify-between items-center mb-4">
                         <span class="text-2xl font-bold text-blue-600">Rp 250.000</span>
                         <span class="text-sm text-gray-500 line-through">Rp 300.000</span>
@@ -182,6 +232,13 @@
                 <div class="p-5">
                     <h3 class="text-xl font-semibold text-gray-800 mb-2">Nama Produk Keren 3</h3>
                     <p class="text-gray-600 text-sm mb-3">Deskripsi singkat produk ini.</p>
+                    <div class="flex items-center justify-center text-yellow-400 text-2xl mb-2 star-rating" data-rating="0">
+                        <span class="star" data-value="1">&#9733;</span>
+                        <span class="star" data-value="2">&#9733;</span>
+                        <span class="star" data-value="3">&#9733;</span>
+                        <span class="star" data-value="4">&#9733;</span>
+                        <span class="star" data-value="5">&#9733;</span>
+                    </div>
                     <div class="flex justify-between items-center mb-4">
                         <span class="text-2xl font-bold text-blue-600">Rp 120.000</span>
                         <span class="text-sm text-gray-500 line-through">Rp 180.000</span>
@@ -195,77 +252,23 @@
                     </button>
                 </div>
             </div>
-
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl">
-                <img src="https://placehold.co/600x400/D1E7DD/000000?text=Produk+4" alt="Produk 4" class="w-full h-48 object-cover">
-                <div class="p-5">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Nama Produk Keren 4</h3>
-                    <p class="text-gray-600 text-sm mb-3">Deskripsi singkat produk ini.</p>
-                    <div class="flex justify-between items-center mb-4">
-                        <span class="text-2xl font-bold text-blue-600">Rp 300.000</span>
-                        <span class="text-sm text-gray-500 line-through">Rp 350.000</span>
-                    </div>
-                    <button class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300 font-medium add-to-cart-button"
-                            data-product-id="prod004"
-                            data-product-name="Nama Produk Keren 4"
-                            data-product-price="300000"
-                            data-product-image="https://placehold.co/100x100/D1E7DD/000000?text=Produk+Keranjang+4">
-                        Tambah ke Keranjang
-                    </button>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl">
-                <img src="https://placehold.co/600x400/D1E7DD/000000?text=Produk+5" alt="Produk 5" class="w-full h-48 object-cover">
-                <div class="p-5">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Nama Produk Keren 5</h3>
-                    <p class="text-gray-600 text-sm mb-3">Deskripsi singkat produk ini.</p>
-                    <div class="flex justify-between items-center mb-4">
-                        <span class="text-2xl font-bold text-blue-600">Rp 95.000</span>
-                        <span class="text-sm text-gray-500 line-through">Rp 110.000</span>
-                    </div>
-                    <button class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300 font-medium add-to-cart-button"
-                            data-product-id="prod005"
-                            data-product-name="Nama Produk Keren 5"
-                            data-product-price="95000"
-                            data-product-image="https://placehold.co/100x100/D1E7DD/000000?text=Produk+Keranjang+5">
-                        Tambah ke Keranjang
-                    </button>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl">
-                <img src="https://placehold.co/600x400/D1E7DD/000000?text=Produk+6" alt="Produk 6" class="w-full h-48 object-cover">
-                <div class="p-5">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Nama Produk Keren 6</h3>
-                    <p class="text-gray-600 text-sm mb-3">Deskripsi singkat produk ini.</p>
-                    <div class="flex justify-between items-center mb-4">
-                        <span class="text-2xl font-bold text-blue-600">Rp 180.000</span>
-                        <span class="text-sm text-gray-500 line-through">Rp 220.000</span>
-                    </div>
-                    <button class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300 font-medium add-to-cart-button"
-                            data-product-id="prod006"
-                            data-product-name="Nama Produk Keren 6"
-                            data-product-price="180000"
-                            data-product-image="https://placehold.co/100x100/D1E7DD/000000?text=Produk+Keranjang+6">
-                        Tambah ke Keranjang
-                    </button>
-                </div>
-            </div>
         </div>
     </main>
 
     <section id="payment" class="bg-blue-700 text-white py-12 md:py-16 mt-12 rounded-xl mx-auto container px-6 md:px-8 lg:px-10">
         <h2 class="text-3xl font-bold text-center mb-8">Metode Pembayaran</h2>
         <div class="flex flex-wrap justify-center items-center gap-8">
-            <div class="bg-white p-4 rounded-lg shadow-md w-32 h-20 flex items-center justify-center text-center">
-                <img src="https://placehold.co/120x60/E0F2F7/000000?text=DANA%0A085773105536" alt="Pembayaran via DANA 085773105536" class="max-w-full max-h-full object-contain">
+            <div class="bg-white p-4 rounded-lg shadow-md w-32 h-20 flex flex-col items-center justify-center text-center">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/52/Dana_logo.png" alt="DANA Logo" class="max-w-full h-12 object-contain">
+                <p class="text-gray-800 text-xs mt-1">085773105536</p>
             </div>
-            <div class="bg-white p-4 rounded-lg shadow-md w-32 h-20 flex items-center justify-center text-center">
-                <img src="https://placehold.co/120x60/E0F2F7/000000?text=GOPAY%0A085773105536" alt="Pembayaran via GoPay 085773105536" class="max-w-full max-h-full object-contain">
+            <div class="bg-white p-4 rounded-lg shadow-md w-32 h-20 flex flex-col items-center justify-center text-center">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Logo_Gopay.svg" alt="GoPay Logo" class="max-w-full h-12 object-contain">
+                <p class="text-gray-800 text-xs mt-1">085773105536</p>
             </div>
-            <div class="bg-white p-4 rounded-lg shadow-md w-32 h-20 flex items-center justify-center text-center">
-                <img src="https://placehold.co/120x60/E0F2F7/000000?text=OVO%0A085773105536" alt="Pembayaran via OVO 085773105536" class="max-w-full max-h-full object-contain">
+            <div class="bg-white p-4 rounded-lg shadow-md w-32 h-20 flex flex-col items-center justify-center text-center">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Logo_ovo_purple.svg" alt="OVO Logo" class="max-w-full h-12 object-contain">
+                <p class="text-gray-800 text-xs mt-1">085773105536</p>
             </div>
         </div>
     </section>
@@ -343,15 +346,15 @@
                     <span class="text-2xl font-bold">QRIS</span>
                 </div>
                 <div id="select-dana" class="bg-blue-500 text-white p-6 rounded-lg shadow-md cursor-pointer hover:bg-blue-600 transition duration-300 flex items-center justify-center flex-col">
-                    <img src="https://placehold.co/64x64/E0F2F7/000000?text=DANA" alt="DANA Logo" class="w-16 h-16 mb-4 object-contain">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/52/Dana_logo.png" alt="DANA Logo" class="w-16 h-16 mb-4 object-contain">
                     <span class="text-2xl font-bold">DANA</span>
                 </div>
                 <div id="select-ovo" class="bg-blue-500 text-white p-6 rounded-lg shadow-md cursor-pointer hover:bg-blue-600 transition duration-300 flex items-center justify-center flex-col">
-                    <img src="https://placehold.co/64x64/E0F2F7/000000?text=OVO" alt="OVO Logo" class="w-16 h-16 mb-4 object-contain">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Logo_ovo_purple.svg" alt="OVO Logo" class="w-16 h-16 mb-4 object-contain">
                     <span class="text-2xl font-bold">OVO</span>
                 </div>
                 <div id="select-gopay" class="bg-blue-500 text-white p-6 rounded-lg shadow-md cursor-pointer hover:bg-blue-600 transition duration-300 flex items-center justify-center flex-col">
-                    <img src="https://placehold.co/64x64/E0F2F7/000000?text=GOPAY" alt="GoPay Logo" class="w-16 h-16 mb-4 object-contain">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Logo_Gopay.svg" alt="GoPay Logo" class="w-16 h-16 mb-4 object-contain">
                     <span class="text-2xl font-bold">GoPay</span>
                 </div>
             </div>
@@ -367,7 +370,7 @@
                 </button>
             </div>
             <div class="text-center mb-8">
-                <div class="flex justify-center items-center bg-gray-100 p-6 rounded-lg w-fit mx-auto shadow-inner mb-4">
+                <div class="flex justify-center items-center bg-gray-100 p-6 rounded-lg w-fit mx-auto shadow-inner">
                     <a href="https://ibb.co/nGTD4R2" target="_blank" rel="noopener noreferrer" class="block border-2 border-blue-500 rounded-md overflow-hidden">
                         <img src="https://i.ibb.co/nGTD4R2/0a25f6d65c7cff8085892e462853c849bc194c4a1263f1ab1abab347597ee0d4-5326.png"
                              alt="QRIS Code for RAPZ STORE"
@@ -386,6 +389,9 @@
                     <li>Tunggu verifikasi otomatis.</li>
                 </ol>
             </div>
+            <button id="confirm-qris-payment" class="w-full bg-green-600 text-white py-3 px-6 rounded-lg hover:bg-green-700 transition duration-300 font-bold mt-6">
+                Konfirmasi Pembayaran
+            </button>
         </div>
     </div>
 
@@ -398,7 +404,7 @@
                 </button>
             </div>
             <div class="text-center mb-8">
-                <img src="https://placehold.co/100x100/ADD8E6/000000?text=DANA" alt="DANA Logo" class="mx-auto w-24 h-24 mb-4 rounded-full">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/52/Dana_logo.png" alt="DANA Logo" class="mx-auto w-24 h-24 mb-4 rounded-full object-contain">
                 <div class="text-lg font-semibold text-gray-800">Total: <span id="dana-total-amount" class="text-blue-600">Rp 0</span></div>
                 <div class="text-sm text-gray-500 mt-2">Waktu Tersisa: <span id="dana-countdown">29:59</span></div>
                 <p class="text-2xl font-bold text-blue-700 mt-6">085773105536</p>
@@ -413,6 +419,9 @@
                     <li>Konfirmasi dan selesaikan transaksi.</li>
                 </ol>
             </div>
+            <button id="confirm-dana-payment" class="w-full bg-green-600 text-white py-3 px-6 rounded-lg hover:bg-green-700 transition duration-300 font-bold mt-6">
+                Konfirmasi Pembayaran
+            </button>
         </div>
     </div>
 
@@ -425,7 +434,7 @@
                 </button>
             </div>
             <div class="text-center mb-8">
-                <img src="https://placehold.co/100x100/ADD8E6/000000?text=OVO" alt="OVO Logo" class="mx-auto w-24 h-24 mb-4 rounded-full">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Logo_ovo_purple.svg" alt="OVO Logo" class="mx-auto w-24 h-24 mb-4 rounded-full object-contain">
                 <div class="text-lg font-semibold text-gray-800">Total: <span id="ovo-total-amount" class="text-blue-600">Rp 0</span></div>
                 <div class="text-sm text-gray-500 mt-2">Waktu Tersisa: <span id="ovo-countdown">29:59</span></div>
                 <p class="text-2xl font-bold text-blue-700 mt-6">085773105536</p>
@@ -440,6 +449,9 @@
                     <li>Konfirmasi dan selesaikan transaksi.</li>
                 </ol>
             </div>
+            <button id="confirm-ovo-payment" class="w-full bg-green-600 text-white py-3 px-6 rounded-lg hover:bg-green-700 transition duration-300 font-bold mt-6">
+                Konfirmasi Pembayaran
+            </button>
         </div>
     </div>
 
@@ -452,7 +464,7 @@
                 </button>
             </div>
             <div class="text-center mb-8">
-                <img src="https://placehold.co/100x100/ADD8E6/000000?text=GOPAY" alt="GoPay Logo" class="mx-auto w-24 h-24 mb-4 rounded-full">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Logo_Gopay.svg" alt="GoPay Logo" class="mx-auto w-24 h-24 mb-4 rounded-full object-contain">
                 <div class="text-lg font-semibold text-gray-800">Total: <span id="gopay-total-amount" class="text-blue-600">Rp 0</span></div>
                 <div class="text-sm text-gray-500 mt-2">Waktu Tersisa: <span id="gopay-countdown">29:59</span></div>
                 <p class="text-2xl font-bold text-blue-700 mt-6">085773105536</p>
@@ -467,6 +479,47 @@
                     <li>Konfirmasi dan selesaikan transaksi.</li>
                 </ol>
             </div>
+            <button id="confirm-gopay-payment" class="w-full bg-green-600 text-white py-3 px-6 rounded-lg hover:bg-green-700 transition duration-300 font-bold mt-6">
+                Konfirmasi Pembayaran
+            </button>
+        </div>
+    </div>
+
+    <div id="payment-success-overlay" class="overlay-common fixed inset-0 bg-gray-100 z-50 flex flex-col pt-16 pb-8 text-center">
+        <div class="container mx-auto p-6 md:p-8 lg:p-10 bg-white rounded-xl shadow-lg flex-grow flex flex-col justify-center items-center">
+            <svg class="w-24 h-24 text-green-500 mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">Pembayaran Berhasil!</h2>
+            <p class="text-lg text-gray-700 mb-6">Terima kasih atas pembelian Anda di Denzzy Store.</p>
+            <button id="whatsapp-admin-button" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 mb-4">
+                Hubungi Admin via WhatsApp
+            </button>
+            <button id="close-payment-success" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
+                Tutup
+            </button>
+        </div>
+    </div>
+
+    <div id="rating-comment-overlay" class="overlay-common fixed inset-0 bg-gray-100 z-50 flex flex-col pt-16 pb-8 text-center">
+        <div class="container mx-auto p-6 md:p-8 lg:p-10 bg-white rounded-xl shadow-lg flex-grow flex flex-col justify-center items-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Berikan Rating Anda!</h2>
+            <p class="text-lg text-gray-700 mb-6">Bagaimana pengalaman Anda berbelanja di Denzzy Store?</p>
+
+            <div class="flex items-center justify-center text-yellow-400 text-5xl mb-6 store-rating" data-rating="0">
+                <span class="star" data-value="1">&#9733;</span>
+                <span class="star" data-value="2">&#9733;</span>
+                <span class="star" data-value="3">&#9733;</span>
+                <span class="star" data-value="4">&#9733;</span>
+                <span class="star" data-value="5">&#9733;</span>
+            </div>
+
+            <textarea id="rating-comment-input" rows="4" class="shadow appearance-none border rounded w-full max-w-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" placeholder="Tulis komentar Anda di sini..."></textarea>
+
+            <button id="submit-rating-button" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 mb-3">
+                Kirim Rating & Komentar
+            </button>
+            <button id="skip-rating-button" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-3 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
+                Lewati
+            </button>
         </div>
     </div>
 
@@ -475,9 +528,8 @@
             <p class="text-sm mb-2">&copy; 2025 Denzzy Store. Hak Cipta Dilindungi Undang-Undang.</p>
             <p class="text-xs text-gray-400">Dibuat dengan semangat dan Tailwind CSS.</p>
             <div class="flex justify-center space-x-4 mt-4">
-                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Facebook</a>
-                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Instagram</a>
-                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Twitter</a>
+                <a href="https://wa.me/6285773105536" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition duration-300">Whatsapp</a>
+                <a href="https://instagram.com/denzsukaikan" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition duration-300">Instagram</a>
             </div>
         </div>
     </footer>
@@ -612,7 +664,7 @@
         }
 
         // --- Countdown Timer Function ---
-        function startCountdown(durationInSeconds, displayElementId) {
+        function startCountdown(durationInSeconds, displayElementId, onCompleteCallback) {
             let timer = durationInSeconds;
             const display = document.getElementById(displayElementId);
 
@@ -626,10 +678,55 @@
                 if (--timer < 0) {
                     clearInterval(countdownInterval);
                     display.textContent = "Waktu Habis";
-                    // Optionally, add logic here to invalidate payment or show a message
+                    if (onCompleteCallback) {
+                        onCompleteCallback(); // Call the callback when countdown finishes
+                    }
                 }
             }, 1000);
         }
+
+        // --- Rating Functionality ---
+        function initializeStarRatings(containerSelector = '.star-rating') {
+            document.querySelectorAll(containerSelector).forEach(ratingContainer => {
+                const stars = ratingContainer.querySelectorAll('.star');
+                let currentRating = parseInt(ratingContainer.dataset.rating || '0');
+
+                // Function to update star display
+                const updateStars = (rating) => {
+                    stars.forEach((star, index) => {
+                        if (index < rating) {
+                            star.classList.add('filled');
+                        } else {
+                            star.classList.remove('filled');
+                        }
+                    });
+                };
+
+                // Initial display based on data-rating
+                updateStars(currentRating);
+
+                stars.forEach(star => {
+                    star.addEventListener('mouseover', (e) => {
+                        const value = parseInt(e.target.dataset.value);
+                        updateStars(value);
+                    });
+
+                    star.addEventListener('mouseout', () => {
+                        updateStars(currentRating); // Revert to current rating on mouse out
+                    });
+
+                    star.addEventListener('click', (e) => {
+                        const value = parseInt(e.target.dataset.value);
+                        currentRating = value; // Update the stored rating
+                        ratingContainer.dataset.rating = currentRating; // Update data attribute
+                        updateStars(currentRating); // Ensure display is correct
+                        console.log(`Produk diberi rating: ${currentRating} bintang`);
+                        // Di sini Anda bisa mengirim rating ke server jika ada backend
+                    });
+                });
+            });
+        }
+
 
         // --- Event Listeners ---
         document.addEventListener('DOMContentLoaded', () => {
@@ -642,7 +739,7 @@
             const mobileCartLink = document.getElementById('mobile-cart-link');
             const cartPageOverlay = document.getElementById('cart-page-overlay');
             const closeCartPageButton = document.getElementById('close-cart-page');
-            const proceedToPaymentSelectionButton = document.getElementById('proceed-to-payment-selection'); // New button ID
+            const proceedToPaymentSelectionButton = document.getElementById('proceed-to-payment-selection');
             const continueShoppingButton = document.getElementById('continue-shopping');
 
             const paymentSelectionOverlay = document.getElementById('payment-selection-overlay');
@@ -655,23 +752,39 @@
             const qrisPaymentOverlay = document.getElementById('qris-payment-overlay');
             const closeQrisPaymentButton = document.getElementById('close-qris-payment');
             const qrisTotalAmountSpan = document.getElementById('qris-total-amount');
+            const confirmQrisPaymentButton = document.getElementById('confirm-qris-payment');
 
             const danaPaymentOverlay = document.getElementById('dana-payment-overlay');
             const closeDanaPaymentButton = document.getElementById('close-dana-payment');
             const danaTotalAmountSpan = document.getElementById('dana-total-amount');
+            const confirmDanaPaymentButton = document.getElementById('confirm-dana-payment');
 
             const ovoPaymentOverlay = document.getElementById('ovo-payment-overlay');
             const closeOvoPaymentButton = document.getElementById('close-ovo-payment');
             const ovoTotalAmountSpan = document.getElementById('ovo-total-amount');
+            const confirmOvoPaymentButton = document.getElementById('confirm-ovo-payment');
 
             const gopayPaymentOverlay = document.getElementById('gopay-payment-overlay');
             const closeGopayPaymentButton = document.getElementById('close-gopay-payment');
             const gopayTotalAmountSpan = document.getElementById('gopay-total-amount');
+            const confirmGopayPaymentButton = document.getElementById('confirm-gopay-payment');
+
+            const paymentSuccessOverlay = document.getElementById('payment-success-overlay');
+            const whatsappAdminButton = document.getElementById('whatsapp-admin-button');
+            const closePaymentSuccessButton = document.getElementById('close-payment-success');
+
+            const ratingCommentOverlay = document.getElementById('rating-comment-overlay');
+            const submitRatingButton = document.getElementById('submit-rating-button');
+            const skipRatingButton = document.getElementById('skip-rating-button');
+            const ratingCommentInput = document.getElementById('rating-comment-input');
 
 
             const desktopNavLinks = document.querySelectorAll('.desktop-nav-link');
             const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
             const addToCartButtons = document.querySelectorAll('.add-to-cart-button');
+
+            const splashScreen = document.getElementById('splash-screen');
+
 
             // Event Listener for Mobile Menu
             mobileMenuButton.addEventListener('click', () => {
@@ -728,10 +841,7 @@
             proceedToPaymentSelectionButton.addEventListener('click', () => {
                 const totals = calculateCartTotals();
                 if (totals.total === 0) {
-                    // Implement a custom message box instead of alert
                     console.log("Keranjang Anda kosong. Tambahkan produk untuk melanjutkan pembayaran.");
-                    // Example of a simple custom message box (you'd need to create this HTML/CSS)
-                    // showCustomMessageBox("Keranjang Anda kosong. Tambahkan produk untuk melanjutkan pembayaran.");
                     return;
                 }
                 hideOverlay(cartPageOverlay);
@@ -744,37 +854,35 @@
                 hideOverlay(paymentSelectionOverlay);
             });
 
-            selectQrisButton.addEventListener('click', () => {
+            // Functions to handle payment selection and show detail overlay
+            const handlePaymentSelection = (overlayToShow, totalAmountSpan, countdownId) => {
                 hideOverlay(paymentSelectionOverlay);
                 const totals = calculateCartTotals();
-                qrisTotalAmountSpan.textContent = `Rp ${totals.total.toLocaleString('id-ID')}`;
-                startCountdown(1800, 'qris-countdown'); // 30 minutes countdown
-                showOverlay(qrisPaymentOverlay);
-            });
+                totalAmountSpan.textContent = `Rp ${totals.total.toLocaleString('id-ID')}`;
+                startCountdown(1800, countdownId, () => {
+                    // Callback when countdown finishes (simulates payment completion)
+                    hideOverlay(overlayToShow);
+                    showOverlay(paymentSuccessOverlay);
+                }); // 30 minutes countdown
+                showOverlay(overlayToShow);
+            };
 
-            selectDanaButton.addEventListener('click', () => {
-                hideOverlay(paymentSelectionOverlay);
-                const totals = calculateCartTotals();
-                danaTotalAmountSpan.textContent = `Rp ${totals.total.toLocaleString('id-ID')}`;
-                startCountdown(1800, 'dana-countdown'); // 30 minutes countdown
-                showOverlay(danaPaymentOverlay);
-            });
+            selectQrisButton.addEventListener('click', () => handlePaymentSelection(qrisPaymentOverlay, qrisTotalAmountSpan, 'qris-countdown'));
+            selectDanaButton.addEventListener('click', () => handlePaymentSelection(danaPaymentOverlay, danaTotalAmountSpan, 'dana-countdown'));
+            selectOvoButton.addEventListener('click', () => handlePaymentSelection(ovoPaymentOverlay, ovoTotalAmountSpan, 'ovo-countdown'));
+            selectGopayButton.addEventListener('click', () => handlePaymentSelection(gopayPaymentOverlay, gopayTotalAmountSpan, 'gopay-countdown'));
 
-            selectOvoButton.addEventListener('click', () => {
-                hideOverlay(paymentSelectionOverlay);
-                const totals = calculateCartTotals();
-                ovoTotalAmountSpan.textContent = `Rp ${totals.total.toLocaleString('id-ID')}`;
-                startCountdown(1800, 'ovo-countdown'); // 30 minutes countdown
-                showOverlay(ovoPaymentOverlay);
-            });
+            // "Konfirmasi Pembayaran" buttons on detail overlays
+            const handleConfirmPayment = (currentPaymentOverlay) => {
+                hideOverlay(currentPaymentOverlay);
+                showOverlay(paymentSuccessOverlay);
+            };
 
-            selectGopayButton.addEventListener('click', () => {
-                hideOverlay(paymentSelectionOverlay);
-                const totals = calculateCartTotals();
-                gopayTotalAmountSpan.textContent = `Rp ${totals.total.toLocaleString('id-ID')}`;
-                startCountdown(1800, 'gopay-countdown'); // 30 minutes countdown
-                showOverlay(gopayPaymentOverlay);
-            });
+            confirmQrisPaymentButton.addEventListener('click', () => handleConfirmPayment(qrisPaymentOverlay));
+            confirmDanaPaymentButton.addEventListener('click', () => handleConfirmPayment(danaPaymentOverlay));
+            confirmOvoPaymentButton.addEventListener('click', () => handleConfirmPayment(ovoPaymentOverlay));
+            confirmGopayPaymentButton.addEventListener('click', () => handleConfirmPayment(gopayPaymentOverlay));
+
 
             // Close buttons for payment detail overlays
             closeQrisPaymentButton.addEventListener('click', () => {
@@ -790,6 +898,29 @@
                 hideOverlay(gopayPaymentOverlay);
             });
 
+            // Event Listener for Payment Success Overlay
+            whatsappAdminButton.addEventListener('click', () => {
+                window.open('https://wa.me/6285773105536', '_blank');
+            });
+
+            closePaymentSuccessButton.addEventListener('click', () => {
+                hideOverlay(paymentSuccessOverlay);
+                showOverlay(ratingCommentOverlay); // Show rating modal after success is closed
+            });
+
+            // Event Listener for Rating and Comment Overlay
+            submitRatingButton.addEventListener('click', () => {
+                const currentRating = document.querySelector('.store-rating').dataset.rating;
+                const comment = ratingCommentInput.value.trim();
+                console.log(`Rating Toko: ${currentRating} bintang`);
+                console.log(`Komentar: ${comment}`);
+                alert('Terima kasih atas rating dan komentar Anda!'); // Use custom message box in real app
+                hideOverlay(ratingCommentOverlay);
+            });
+
+            skipRatingButton.addEventListener('click', () => {
+                hideOverlay(ratingCommentOverlay);
+            });
 
             // Event Listener for desktop navigation links to scroll smoothly
             desktopNavLinks.forEach(link => {
@@ -824,6 +955,18 @@
 
             // Initial render of the cart (will show empty)
             renderCart();
+            initializeStarRatings(); // Initialize product rating functionality
+            initializeStarRatings('.store-rating'); // Initialize store rating functionality
+
+
+            // --- Splash Screen Logic ---
+            // Hide splash screen after content is loaded or a timeout
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    splashScreen.classList.add('hidden');
+                    document.body.style.overflow = ''; // Restore body scroll after splash screen
+                }, 500); // 0.5 second delay for splash screen (faster)
+            });
         });
     </script>
 </body>
