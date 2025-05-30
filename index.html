@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Denzzy Store - Pembayaran Lanjutan</title>
+    <title>Denzzy Store - Beranda</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -41,17 +41,6 @@
         .mobile-menu-overlay.active {
             transform: translateX(0); /* Tampilkan di layar */
         }
-        /* Style untuk halaman keranjang dan pembayaran */
-        .overlay-common {
-            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-            opacity: 0;
-            visibility: hidden;
-            overflow-y: auto; /* Overlay itu sendiri bisa di-scroll jika kontennya panjang */
-        }
-        .overlay-common.active {
-            opacity: 1;
-            visibility: visible;
-        }
         /* Mengatur scroll behavior untuk smooth scroll */
         html {
             scroll-behavior: smooth;
@@ -86,10 +75,10 @@
                     <a href="#benefits" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium desktop-nav-link">Keuntungan</a>
                     <a href="#payment" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium desktop-nav-link">Pembayaran</a>
                     <a href="#qris-payment-section" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium desktop-nav-link">QRIS</a>
-                    <a href="#" id="desktop-cart-link" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Keranjang</a>
+                    <a href="cart.html" id="desktop-cart-link" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Keranjang</a>
                 </nav>
 
-                <a href="#" id="cart-icon" class="text-gray-600 hover:text-blue-600 transition duration-300 focus:outline-none" aria-label="Keranjang Belanja">
+                <a href="cart.html" id="cart-icon" class="text-gray-600 hover:text-blue-600 transition duration-300 focus:outline-none" aria-label="Keranjang Belanja">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
                     </svg>
@@ -113,21 +102,21 @@
             <a href="#products" class="text-white hover:text-blue-400 transition duration-300 font-medium mobile-nav-link">List Produk</a>
             <a href="#benefits" class="text-white hover:text-blue-400 transition duration-300 font-medium mobile-nav-link">Keuntungan</a>
             <a href="#payment" class="text-white hover:text-blue-400 transition duration-300 font-medium mobile-nav-link">Pembayaran</a>
-            <a href="#" id="mobile-cart-link" class="text-white hover:text-blue-400 transition duration-300 font-medium">Keranjang</a>
+            <a href="cart.html" id="mobile-cart-link" class="text-white hover:text-blue-400 transition duration-300 font-medium">Keranjang</a>
         </nav>
     </div>
 
     <section class="relative bg-gradient-to-r from-blue-600 to-purple-600 text-white py-20 md:py-28 lg:py-36 rounded-b-xl overflow-hidden">
-        <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('https://placehold.co/1200x600/3B82F6/ffffff?text=Background+Image');"></div>
+        <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/e0/Alight_Motion_Logo.png');"></div>
         <div class="container mx-auto text-center relative z-10 px-4">
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight">
-                Temukan Koleksi Terbaik Kami
+                Jasa Editing Logo Video Profesional
             </h1>
             <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-                Jelajahi berbagai produk unik dan berkualitas tinggi yang dirancang khusus untuk Anda.
+                Wujudkan logo video impian Anda dengan sentuhan Alight Motion yang dinamis dan memukau.
             </p>
             <button class="bg-white text-blue-600 hover:bg-blue-100 font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
-                Belanja Sekarang
+                Lihat Portofolio
             </button>
         </div>
     </section>
@@ -176,7 +165,7 @@
 
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl">
-                <img src="https://i.postimg.cc/BZR1YFbq/produk1.jpg" alt="Produk 1" class="w-full h-48 object-cover">
+                <img src="https://i.postimg.cc/BZR1YFbq/produk1.jpg" alt="Jasa Edit Logo Video" class="w-full h-48 object-cover">
                 <div class="p-5">
                     <h3 class="text-xl font-semibold text-gray-800 mb-2">Jasa Edit Logo Video</h3>
                     <p class="text-gray-600 text-sm mb-3">Menggunakan Elemen Yang Dapat Membuat Logo Anda Menjadi Lebih Bergerak</p>
@@ -191,11 +180,12 @@
                         <span class="text-2xl font-bold text-blue-600">Rp 30.000</span>
                         <span class="text-sm text-gray-500 line-through">Rp 50.000</span>
                     </div>
+                    <p class="text-green-600 font-semibold text-sm mb-2">Produk Tersisa 99+</p>
                     <button class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300 font-medium add-to-cart-button"
                             data-product-id="prod001"
                             data-product-name="Jasa Edit Logo Video"
                             data-product-price="30000"
-                            data-product-image="https://i.postimg.cc/BZR1YFbq/produk1.jpg?text=Jasa+Edit+Logo">
+                            data-product-image="https://i.postimg.cc/BZR1YFbq/produk1.jpg">
                         Tambah ke Keranjang
                     </button>
                 </div>
@@ -217,12 +207,9 @@
                         <span class="text-2xl font-bold text-blue-600">Rp 250.000</span>
                         <span class="text-sm text-gray-500 line-through">Rp 300.000</span>
                     </div>
-                    <button class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300 font-medium add-to-cart-button"
-                            data-product-id="prod002"
-                            data-product-name="Kosong 1"
-                            data-product-price="250000"
-                            data-product-image="https://placehold.co/100x100/D1E7DD/000000?text=Produk+Kosong+1">
-                        Tambah ke Keranjang
+                    <p class="text-red-600 font-semibold text-sm mb-2">Produk Habis</p>
+                    <button class="w-full bg-gray-400 text-white py-2 px-4 rounded-lg cursor-not-allowed font-medium" disabled>
+                        Produk Habis
                     </button>
                 </div>
             </div>
@@ -243,12 +230,9 @@
                         <span class="text-2xl font-bold text-blue-600">Rp 120.000</span>
                         <span class="text-sm text-gray-500 line-through">Rp 180.000</span>
                     </div>
-                    <button class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300 font-medium add-to-cart-button"
-                            data-product-id="prod003"
-                            data-product-name="Kosong 2"
-                            data-product-price="120000"
-                            data-product-image="https://placehold.co/100x100/D1E7DD/000000?text=Produk+Kosong+2">
-                        Tambah ke Keranjang
+                    <p class="text-red-600 font-semibold text-sm mb-2">Produk Habis</p>
+                    <button class="w-full bg-gray-400 text-white py-2 px-4 rounded-lg cursor-not-allowed font-medium" disabled>
+                        Produk Habis
                     </button>
                 </div>
             </div>
@@ -280,13 +264,23 @@
         </p>
         <div class="flex justify-center items-center bg-gray-100 p-6 rounded-lg w-fit mx-auto shadow-inner">
             <a href="https://ibb.co/nGTD4R2" target="_blank" rel="noopener noreferrer" class="block border-2 border-blue-500 rounded-md overflow-hidden">
-                <img src="https://i.postimg.cc/bJNQPjfp/0a25f6d65c7cff8085892e462853c849bc194c4a1263f1ab1abab347597ee0d4-5326.png"
+                <img src="https://i.ibb.co/nGTD4R2/0a25f6d65c7cff8085892e462853c849bc194c4a1263f1ab1abab347597ee0d4-5326.png"
                      alt="QRIS Code for RAPZ STORE"
                      class="w-48 h-48 object-contain">
             </a>
         </div>
         <p class="text-gray-500 text-sm mt-4">Pastikan nominal pembayaran sesuai dengan total belanja Anda.</p>
     </section>
+
+    <div id="custom-message-box" class="overlay-common fixed inset-0 bg-gray-900 bg-opacity-75 z-50 flex items-center justify-center hidden">
+        <div class="bg-white p-6 rounded-lg shadow-xl text-center max-w-sm w-full mx-4">
+            <h3 id="message-box-title" class="text-xl font-bold text-gray-800 mb-4">Pesan</h3>
+            <p id="message-box-content" class="text-gray-700 mb-6">Isi pesan di sini.</p>
+            <button id="close-message-box" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300">
+                Tutup
+            </button>
+        </div>
+    </div>
 
     <div id="cart-page-overlay" class="overlay-common fixed inset-0 bg-gray-100 z-50 flex flex-col pt-16 pb-8">
         <div class="container mx-auto p-6 md:p-8 lg:p-10 bg-white rounded-xl shadow-lg flex-grow overflow-y-auto">
@@ -331,197 +325,27 @@
         </div>
     </div>
 
-    <div id="payment-selection-overlay" class="overlay-common fixed inset-0 bg-gray-100 z-50 flex flex-col pt-16 pb-8">
-        <div class="container mx-auto p-6 md:p-8 lg:p-10 bg-white rounded-xl shadow-lg flex-grow">
-            <div class="flex justify-between items-center mb-8">
-                <h2 class="text-3xl font-bold text-gray-800">Pilih Metode Pembayaran</h2>
-                <button id="close-payment-selection" class="text-gray-600 hover:text-gray-900 text-4xl focus:outline-none" aria-label="Tutup Pilihan Pembayaran">
+    <div id="product-action-overlay" class="overlay-common fixed inset-0 bg-gray-900 bg-opacity-75 z-50 flex flex-col items-center justify-center hidden">
+        <div class="bg-white p-8 rounded-xl shadow-lg text-center max-w-sm w-full mx-4">
+            <div class="flex justify-end">
+                <button id="close-product-action-overlay" class="text-gray-600 hover:text-gray-900 text-3xl focus:outline-none" aria-label="Tutup Pilihan Produk">
                     &times;
                 </button>
             </div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-6">Pilihan Produk</h3>
+            <img id="product-action-image" src="https://placehold.co/150x150/D1E7DD/000000?text=Produk" alt="Product Image" class="w-32 h-32 object-cover rounded-md mx-auto mb-4">
+            <p id="product-action-name" class="text-xl font-semibold text-gray-800 mb-2">Nama Produk</p>
+            <p id="product-action-price" class="text-blue-600 font-bold text-lg mb-6">Rp 0</p>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div id="select-qris" class="bg-blue-500 text-white p-6 rounded-lg shadow-md cursor-pointer hover:bg-blue-600 transition duration-300 flex items-center justify-center flex-col">
-                    <svg class="w-16 h-16 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
-                    <span class="text-2xl font-bold">QRIS</span>
-                </div>
-                <div id="select-dana" class="bg-blue-500 text-white p-6 rounded-lg shadow-md cursor-pointer hover:bg-blue-600 transition duration-300 flex items-center justify-center flex-col">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/52/Dana_logo.png" alt="DANA Logo" class="w-16 h-16 mb-4 object-contain">
-                    <span class="text-2xl font-bold">DANA</span>
-                </div>
-                <div id="select-ovo" class="bg-blue-500 text-white p-6 rounded-lg shadow-md cursor-pointer hover:bg-blue-600 transition duration-300 flex items-center justify-center flex-col">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Logo_ovo_purple.svg" alt="OVO Logo" class="w-16 h-16 mb-4 object-contain">
-                    <span class="text-2xl font-bold">OVO</span>
-                </div>
-                <div id="select-gopay" class="bg-blue-500 text-white p-6 rounded-lg shadow-md cursor-pointer hover:bg-blue-600 transition duration-300 flex items-center justify-center flex-col">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Logo_Gopay.svg" alt="GoPay Logo" class="w-16 h-16 mb-4 object-contain">
-                    <span class="text-2xl font-bold">GoPay</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="qris-payment-overlay" class="overlay-common fixed inset-0 bg-gray-100 z-50 flex flex-col pt-16 pb-8">
-        <div class="container mx-auto p-6 md:p-8 lg:p-10 bg-white rounded-xl shadow-lg flex-grow overflow-y-auto">
-            <div class="flex justify-between items-center mb-8">
-                <h2 class="text-3xl font-bold text-gray-800">Scan QRIS</h2>
-                <button id="close-qris-payment" class="text-gray-600 hover:text-gray-900 text-4xl focus:outline-none" aria-label="Tutup Pembayaran QRIS">
-                    &times;
-                </button>
-            </div>
-            <div class="text-center mb-8">
-                <div class="flex justify-center items-center bg-gray-100 p-6 rounded-lg w-fit mx-auto shadow-inner">
-                    <a href="https://ibb.co/nGTD4R2" target="_blank" rel="noopener noreferrer" class="block border-2 border-blue-500 rounded-md overflow-hidden">
-                        <img src="https://i.postimg.cc/bJNQPjfp/0a25f6d65c7cff8085892e462853c849bc194c4a1263f1ab1abab347597ee0d4-5326.png"
-                             alt="QRIS Code for RAPZ STORE"
-                             class="w-48 h-48 object-contain">
-                    </a>
-                </div>
-                <div class="text-lg font-semibold text-gray-800">Total: <span id="qris-total-amount" class="text-blue-600">Rp 0</span></div>
-                <div class="text-sm text-gray-500 mt-2">Waktu Tersisa: <span id="qris-countdown">29:59</span></div>
-            </div>
-            <div class="bg-blue-50 p-6 rounded-lg text-left">
-                <h3 class="text-xl font-semibold text-blue-700 mb-3">Cara bayar dengan QRIS:</h3>
-                <ol class="list-decimal list-inside text-gray-700 space-y-2">
-                    <li>Buka aplikasi e-wallet atau m-banking Anda.</li>
-                    <li>Scan kode QR di atas.</li>
-                    <li>Konfirmasi dan selesaikan pembayaran.</li>
-                    <li>Tunggu verifikasi otomatis.</li>
-                </ol>
-            </div>
-            <button id="confirm-qris-payment" class="w-full bg-green-600 text-white py-3 px-6 rounded-lg hover:bg-green-700 transition duration-300 font-bold mt-6">
-                Konfirmasi Pembayaran
+            <button id="product-action-add-to-cart" class="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition duration-300 font-bold mb-3">
+                Tambahkan Ke Keranjang
+            </button>
+            <button id="product-action-buy-now" class="w-full bg-green-600 text-white py-3 px-6 rounded-lg hover:bg-green-700 transition duration-300 font-bold">
+                Langsung Bayar
             </button>
         </div>
     </div>
 
-    <div id="dana-payment-overlay" class="overlay-common fixed inset-0 bg-gray-100 z-50 flex flex-col pt-16 pb-8">
-        <div class="container mx-auto p-6 md:p-8 lg:p-10 bg-white rounded-xl shadow-lg flex-grow overflow-y-auto">
-            <div class="flex justify-between items-center mb-8">
-                <h2 class="text-3xl font-bold text-gray-800">Pembayaran via DANA</h2>
-                <button id="close-dana-payment" class="text-gray-600 hover:text-gray-900 text-4xl focus:outline-none" aria-label="Tutup Pembayaran DANA">
-                    &times;
-                </button>
-            </div>
-            <div class="text-center mb-8">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/52/Dana_logo.png" alt="DANA Logo" class="mx-auto w-24 h-24 mb-4 rounded-full object-contain">
-                <div class="text-lg font-semibold text-gray-800">Total: <span id="dana-total-amount" class="text-blue-600">Rp 0</span></div>
-                <div class="text-sm text-gray-500 mt-2">Waktu Tersisa: <span id="dana-countdown">29:59</span></div>
-                <p class="text-2xl font-bold text-blue-700 mt-6">085773105536</p>
-            </div>
-            <div class="bg-blue-50 p-6 rounded-lg text-left">
-                <h3 class="text-xl font-semibold text-blue-700 mb-3">Cara bayar dengan DANA:</h3>
-                <ol class="list-decimal list-inside text-gray-700 space-y-2">
-                    <li>Buka aplikasi DANA Anda.</li>
-                    <li>Pilih menu 'Kirim' atau 'Bayar'.</li>
-                    <li>Masukkan nomor telepon tujuan: <span class="font-bold">085773105536</span>.</li>
-                    <li>Masukkan jumlah total pembayaran.</li>
-                    <li>Konfirmasi dan selesaikan transaksi.</li>
-                </ol>
-            </div>
-            <button id="confirm-dana-payment" class="w-full bg-green-600 text-white py-3 px-6 rounded-lg hover:bg-green-700 transition duration-300 font-bold mt-6">
-                Konfirmasi Pembayaran
-            </button>
-        </div>
-    </div>
-
-    <div id="ovo-payment-overlay" class="overlay-common fixed inset-0 bg-gray-100 z-50 flex flex-col pt-16 pb-8">
-        <div class="container mx-auto p-6 md:p-8 lg:p-10 bg-white rounded-xl shadow-lg flex-grow overflow-y-auto">
-            <div class="flex justify-between items-center mb-8">
-                <h2 class="text-3xl font-bold text-gray-800">Pembayaran via OVO</h2>
-                <button id="close-ovo-payment" class="text-gray-600 hover:text-gray-900 text-4xl focus:outline-none" aria-label="Tutup Pembayaran OVO">
-                    &times;
-                </button>
-            </div>
-            <div class="text-center mb-8">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Logo_ovo_purple.svg" alt="OVO Logo" class="mx-auto w-24 h-24 mb-4 rounded-full object-contain">
-                <div class="text-lg font-semibold text-gray-800">Total: <span id="ovo-total-amount" class="text-blue-600">Rp 0</span></div>
-                <div class="text-sm text-gray-500 mt-2">Waktu Tersisa: <span id="ovo-countdown">29:59</span></div>
-                <p class="text-2xl font-bold text-blue-700 mt-6">085773105536</p>
-            </div>
-            <div class="bg-blue-50 p-6 rounded-lg text-left">
-                <h3 class="text-xl font-semibold text-blue-700 mb-3">Cara bayar dengan OVO:</h3>
-                <ol class="list-decimal list-inside text-gray-700 space-y-2">
-                    <li>Buka aplikasi OVO Anda.</li>
-                    <li>Pilih menu 'Transfer' atau 'Bayar'.</li>
-                    <li>Masukkan nomor telepon tujuan: <span class="font-bold">085773105536</span>.</li>
-                    <li>Masukkan jumlah total pembayaran.</li>
-                    <li>Konfirmasi dan selesaikan transaksi.</li>
-                </ol>
-            </div>
-            <button id="confirm-ovo-payment" class="w-full bg-green-600 text-white py-3 px-6 rounded-lg hover:bg-green-700 transition duration-300 font-bold mt-6">
-                Konfirmasi Pembayaran
-            </button>
-        </div>
-    </div>
-
-    <div id="gopay-payment-overlay" class="overlay-common fixed inset-0 bg-gray-100 z-50 flex flex-col pt-16 pb-8">
-        <div class="container mx-auto p-6 md:p-8 lg:p-10 bg-white rounded-xl shadow-lg flex-grow overflow-y-auto">
-            <div class="flex justify-between items-center mb-8">
-                <h2 class="text-3xl font-bold text-gray-800">Pembayaran via GoPay</h2>
-                <button id="close-gopay-payment" class="text-gray-600 hover:text-gray-900 text-4xl focus:outline-none" aria-label="Tutup Pembayaran GoPay">
-                    &times;
-                </button>
-            </div>
-            <div class="text-center mb-8">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Logo_Gopay.svg" alt="GoPay Logo" class="mx-auto w-24 h-24 mb-4 rounded-full object-contain">
-                <div class="text-lg font-semibold text-gray-800">Total: <span id="gopay-total-amount" class="text-blue-600">Rp 0</span></div>
-                <div class="text-sm text-gray-500 mt-2">Waktu Tersisa: <span id="gopay-countdown">29:59</span></div>
-                <p class="text-2xl font-bold text-blue-700 mt-6">085773105536</p>
-            </div>
-            <div class="bg-blue-50 p-6 rounded-lg text-left">
-                <h3 class="text-xl font-semibold text-blue-700 mb-3">Cara bayar dengan GoPay:</h3>
-                <ol class="list-decimal list-inside text-gray-700 space-y-2">
-                    <li>Buka aplikasi GoPay Anda.</li>
-                    <li>Pilih menu 'Bayar' atau 'Transfer'.</li>
-                    <li>Masukkan nomor telepon tujuan: <span class="font-bold">085773105536</span>.</li>
-                    <li>Masukkan jumlah total pembayaran.</li>
-                    <li>Konfirmasi dan selesaikan transaksi.</li>
-                </ol>
-            </div>
-            <button id="confirm-gopay-payment" class="w-full bg-green-600 text-white py-3 px-6 rounded-lg hover:bg-green-700 transition duration-300 font-bold mt-6">
-                Konfirmasi Pembayaran
-            </button>
-        </div>
-    </div>
-
-    <div id="payment-success-overlay" class="overlay-common fixed inset-0 bg-gray-100 z-50 flex flex-col pt-16 pb-8 text-center">
-        <div class="container mx-auto p-6 md:p-8 lg:p-10 bg-white rounded-xl shadow-lg flex-grow flex flex-col justify-center items-center">
-            <svg class="w-24 h-24 text-green-500 mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-            <h2 class="text-3xl font-bold text-gray-800 mb-4">Pembayaran Berhasil!</h2>
-            <p class="text-lg text-gray-700 mb-6">Terima kasih atas pembelian Anda di Denzzy Store.</p>
-            <button id="whatsapp-admin-button" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 mb-4">
-                Hubungi Admin via WhatsApp
-            </button>
-            <button id="close-payment-success" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
-                Tutup
-            </button>
-        </div>
-    </div>
-
-    <div id="rating-comment-overlay" class="overlay-common fixed inset-0 bg-gray-100 z-50 flex flex-col pt-16 pb-8 text-center">
-        <div class="container mx-auto p-6 md:p-8 lg:p-10 bg-white rounded-xl shadow-lg flex-grow flex flex-col justify-center items-center">
-            <h2 class="text-3xl font-bold text-gray-800 mb-6">Berikan Rating Anda!</h2>
-            <p class="text-lg text-gray-700 mb-6">Bagaimana pengalaman Anda berbelanja di Denzzy Store?</p>
-
-            <div class="flex items-center justify-center text-yellow-400 text-5xl mb-6 store-rating" data-rating="0">
-                <span class="star" data-value="1">&#9733;</span>
-                <span class="star" data-value="2">&#9733;</span>
-                <span class="star" data-value="3">&#9733;</span>
-                <span class="star" data-value="4">&#9733;</span>
-                <span class="star" data-value="5">&#9733;</span>
-            </div>
-
-            <textarea id="rating-comment-input" rows="4" class="shadow appearance-none border rounded w-full max-w-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" placeholder="Tulis komentar Anda di sini..."></textarea>
-
-            <button id="submit-rating-button" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 mb-3">
-                Kirim Rating & Komentar
-            </button>
-            <button id="skip-rating-button" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-3 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
-                Lewati
-            </button>
-        </div>
-    </div>
 
     <footer class="bg-gray-900 text-white py-8 mt-12 rounded-t-xl">
         <div class="container mx-auto text-center px-4">
@@ -541,21 +365,53 @@
 
         // --- Utility Functions for Overlay Management ---
         function showOverlay(overlayElement) {
-            overlayElement.classList.remove('hidden');
-            setTimeout(() => {
-                overlayElement.classList.add('active');
-                document.body.style.overflow = 'hidden'; // Prevent body scroll
-            }, 10);
+            // Add a check to ensure overlayElement is not null
+            if (overlayElement) {
+                overlayElement.classList.remove('hidden');
+                setTimeout(() => {
+                    overlayElement.classList.add('active');
+                    document.body.style.overflow = 'hidden'; // Prevent body scroll
+                }, 10);
+            } else {
+                console.error("Error: Overlay element is null in showOverlay function.");
+            }
         }
 
         function hideOverlay(overlayElement) {
-            overlayElement.classList.remove('active');
-            setTimeout(() => {
-                overlayElement.classList.add('hidden');
-                document.body.style.overflow = ''; // Restore body scroll
-                clearInterval(countdownInterval); // Clear any active countdown
-            }, 300); // Match CSS transition duration
+            // Add a check to ensure overlayElement is not null
+            if (overlayElement) {
+                overlayElement.classList.remove('active');
+                setTimeout(() => {
+                    overlayElement.classList.add('hidden');
+                    document.body.style.overflow = ''; // Restore body scroll
+                    clearInterval(countdownInterval); // Clear any active countdown
+                }, 300); // Match CSS transition duration
+            } else {
+                console.error("Error: Overlay element is null in hideOverlay function.");
+            }
         }
+
+        // --- Custom Message Box Functions ---
+        let customMessageBox;
+        let messageBoxTitle;
+        let messageBoxContent;
+        let closeMessageBoxButton;
+
+        function showCustomMessageBox(title, message) {
+            if (customMessageBox && messageBoxTitle && messageBoxContent) {
+                messageBoxTitle.textContent = title;
+                messageBoxContent.textContent = message;
+                showOverlay(customMessageBox);
+            }
+        }
+
+        function hideCustomMessageBox() {
+            if (customMessageBox) {
+                hideOverlay(customMessageBox);
+            }
+        }
+        // --- End Custom Message Box Functions ---
+
 
         // --- Cart Management Functions ---
 
@@ -566,7 +422,7 @@
                 subtotal += item.price * item.quantity;
             });
             // Example shipping: Rp 20.000 if cart is not empty, else Rp 0
-            const shipping = subtotal > 0 ? 0 : 0;
+            const shipping = subtotal > 0 ? 0 : 0; // Set shipping to 0 as requested
             const total = subtotal + shipping;
             return { subtotal, shipping, total };
         }
@@ -578,6 +434,11 @@
             const subtotalSpan = document.getElementById('cart-subtotal');
             const shippingSpan = document.getElementById('cart-shipping');
             const totalSpan = document.getElementById('cart-total');
+
+            if (!cartItemsContainer || !emptyCartMessage || !subtotalSpan || !shippingSpan || !totalSpan) {
+                console.error("One or more cart display elements are missing.");
+                return;
+            }
 
             cartItemsContainer.innerHTML = ''; // Clear existing items
 
@@ -673,11 +534,16 @@
                 const minutes = Math.floor(timer / 60);
                 const seconds = timer % 60;
 
-                display.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                if (display) { // Check if display element exists
+                    display.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                }
+
 
                 if (--timer < 0) {
                     clearInterval(countdownInterval);
-                    display.textContent = "Waktu Habis";
+                    if (display) { // Check if display element exists
+                        display.textContent = "Waktu Habis";
+                    }
                     if (onCompleteCallback) {
                         onCompleteCallback(); // Call the callback when countdown finishes
                     }
@@ -747,7 +613,7 @@
             const selectQrisButton = document.getElementById('select-qris');
             const selectDanaButton = document.getElementById('select-dana');
             const selectOvoButton = document.getElementById('select-ovo');
-            const selectGopayButton = document.getElementById('select-gopay');
+            const selectGopayButton = document.getElementById('select-gopay'); // Corrected declaration
 
             const qrisPaymentOverlay = document.getElementById('qris-payment-overlay');
             const closeQrisPaymentButton = document.getElementById('close-qris-payment');
@@ -760,12 +626,12 @@
             const confirmDanaPaymentButton = document.getElementById('confirm-dana-payment');
 
             const ovoPaymentOverlay = document.getElementById('ovo-payment-overlay');
-            const closeOvoPaymentButton = document.getElementById('close-ovo-payment');
+            const closeOvoPaymentButton = document.getElementById('close-ovo-payment'); // Corrected declaration
             const ovoTotalAmountSpan = document.getElementById('ovo-total-amount');
             const confirmOvoPaymentButton = document.getElementById('confirm-ovo-payment');
 
             const gopayPaymentOverlay = document.getElementById('gopay-payment-overlay');
-            const closeGopayPaymentButton = document.getElementById('close-gopay-payment');
+            const closeGopayPaymentButton = document.getElementById('close-gopay-payment'); // Corrected declaration
             const gopayTotalAmountSpan = document.getElementById('gopay-total-amount');
             const confirmGopayPaymentButton = document.getElementById('confirm-gopay-payment');
 
@@ -778,6 +644,14 @@
             const skipRatingButton = document.getElementById('skip-rating-button');
             const ratingCommentInput = document.getElementById('rating-comment-input');
 
+            const productActionOverlay = document.getElementById('product-action-overlay');
+            const closeProductActionOverlayButton = document.getElementById('close-product-action-overlay');
+            const productActionImage = document.getElementById('product-action-image');
+            const productActionName = document.getElementById('product-action-name');
+            const productActionPrice = document.getElementById('product-action-price');
+            const productActionAddToCartButton = document.getElementById('product-action-add-to-cart');
+            const productActionBuyNowButton = document.getElementById('product-action-buy-now');
+
 
             const desktopNavLinks = document.querySelectorAll('.desktop-nav-link');
             const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
@@ -785,15 +659,31 @@
 
             const splashScreen = document.getElementById('splash-screen');
 
+            // Initialize custom message box elements
+            customMessageBox = document.getElementById('custom-message-box');
+            if (customMessageBox) { // Check if element exists before getting its children
+                messageBoxTitle = document.getElementById('message-box-title');
+                messageBoxContent = document.getElementById('message-box-content');
+                closeMessageBoxButton = document.getElementById('close-message-box');
+
+                if (closeMessageBoxButton) {
+                    closeMessageBoxButton.addEventListener('click', hideCustomMessageBox);
+                }
+            }
+
 
             // Event Listener for Mobile Menu
-            mobileMenuButton.addEventListener('click', () => {
-                showOverlay(mobileMenuOverlay);
-            });
+            if (mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', () => {
+                    showOverlay(mobileMenuOverlay);
+                });
+            }
 
-            closeMobileMenuButton.addEventListener('click', () => {
-                hideOverlay(mobileMenuOverlay);
-            });
+            if (closeMobileMenuButton) {
+                closeMobileMenuButton.addEventListener('click', () => {
+                    hideOverlay(mobileMenuOverlay);
+                });
+            }
 
             mobileNavLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
@@ -810,55 +700,71 @@
             });
 
             // Event Listener for Cart Page
-            cartIcon.addEventListener('click', (e) => {
-                e.preventDefault();
-                renderCart(); // Render cart before showing
-                showOverlay(cartPageOverlay);
-            });
+            if (cartIcon) {
+                cartIcon.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    renderCart(); // Render cart before showing
+                    showOverlay(cartPageOverlay);
+                });
+            }
 
-            desktopCartLink.addEventListener('click', (e) => {
-                e.preventDefault();
-                renderCart(); // Render cart before showing
-                showOverlay(cartPageOverlay);
-            });
+            if (desktopCartLink) {
+                desktopCartLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    renderCart(); // Render cart before showing
+                    showOverlay(cartPageOverlay);
+                });
+            }
 
-            mobileCartLink.addEventListener('click', (e) => {
-                e.preventDefault();
-                hideOverlay(mobileMenuOverlay); // Close mobile menu if open
-                renderCart(); // Render cart before showing
-                showOverlay(cartPageOverlay);
-            });
+            if (mobileCartLink) {
+                mobileCartLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    hideOverlay(mobileMenuOverlay); // Close mobile menu if open
+                    renderCart(); // Render cart before showing
+                    showOverlay(cartPageOverlay);
+                });
+            }
 
-            closeCartPageButton.addEventListener('click', () => {
-                hideOverlay(cartPageOverlay);
-            });
+            if (closeCartPageButton) {
+                closeCartPageButton.addEventListener('click', () => {
+                    hideOverlay(cartPageOverlay);
+                });
+            }
 
-            continueShoppingButton.addEventListener('click', () => {
-                hideOverlay(cartPageOverlay);
-            });
+            if (continueShoppingButton) {
+                continueShoppingButton.addEventListener('click', () => {
+                    hideOverlay(cartPageOverlay);
+                });
+            }
 
             // Event Listener for "Lanjutkan Pembayaran" button in Cart
-            proceedToPaymentSelectionButton.addEventListener('click', () => {
-                const totals = calculateCartTotals();
-                if (totals.total === 0) {
-                    console.log("Keranjang Anda kosong. Tambahkan produk untuk melanjutkan pembayaran.");
-                    return;
-                }
-                hideOverlay(cartPageOverlay);
-                showOverlay(paymentSelectionOverlay);
-            });
+            if (proceedToPaymentSelectionButton) {
+                proceedToPaymentSelectionButton.addEventListener('click', () => {
+                    const totals = calculateCartTotals();
+                    if (totals.total === 0) {
+                        showCustomMessageBox("Keranjang Kosong", "Keranjang Anda kosong. Tambahkan produk untuk melanjutkan pembayaran.");
+                        return;
+                    }
+                    hideOverlay(cartPageOverlay);
+                    showOverlay(paymentSelectionOverlay);
+                });
+            }
 
 
             // Event Listener for Payment Selection Overlay
-            closePaymentSelectionButton.addEventListener('click', () => {
-                hideOverlay(paymentSelectionOverlay);
-            });
+            if (closePaymentSelectionButton) {
+                closePaymentSelectionButton.addEventListener('click', () => {
+                    hideOverlay(paymentSelectionOverlay);
+                });
+            }
 
             // Functions to handle payment selection and show detail overlay
             const handlePaymentSelection = (overlayToShow, totalAmountSpan, countdownId) => {
                 hideOverlay(paymentSelectionOverlay);
                 const totals = calculateCartTotals();
-                totalAmountSpan.textContent = `Rp ${totals.total.toLocaleString('id-ID')}`;
+                if (totalAmountSpan) {
+                    totalAmountSpan.textContent = `Rp ${totals.total.toLocaleString('id-ID')}`;
+                }
                 startCountdown(1800, countdownId, () => {
                     // Callback when countdown finishes (simulates payment completion)
                     hideOverlay(overlayToShow);
@@ -867,10 +773,18 @@
                 showOverlay(overlayToShow);
             };
 
-            selectQrisButton.addEventListener('click', () => handlePaymentSelection(qrisPaymentOverlay, qrisTotalAmountSpan, 'qris-countdown'));
-            selectDanaButton.addEventListener('click', () => handlePaymentSelection(danaPaymentOverlay, danaTotalAmountSpan, 'dana-countdown'));
-            selectOvoButton.addEventListener('click', () => handlePaymentSelection(ovoPaymentOverlay, ovoTotalAmountSpan, 'ovo-countdown'));
-            selectGopayButton.addEventListener('click', () => handlePaymentSelection(gopayPaymentOverlay, gopayTotalAmountSpan, 'gopay-countdown'));
+            if (selectQrisButton) {
+                selectQrisButton.addEventListener('click', () => handlePaymentSelection(qrisPaymentOverlay, qrisTotalAmountSpan, 'qris-countdown'));
+            }
+            if (selectDanaButton) {
+                selectDanaButton.addEventListener('click', () => handlePaymentSelection(danaPaymentOverlay, danaTotalAmountSpan, 'dana-countdown'));
+            }
+            if (selectOvoButton) {
+                selectOvoButton.addEventListener('click', () => handlePaymentSelection(ovoPaymentOverlay, ovoTotalAmountSpan, 'ovo-countdown'));
+            }
+            if (selectGopayButton) {
+                selectGopayButton.addEventListener('click', () => handlePaymentSelection(gopayPaymentOverlay, gopayTotalAmountSpan, 'gopay-countdown'));
+            }
 
             // "Konfirmasi Pembayaran" buttons on detail overlays
             const handleConfirmPayment = (currentPaymentOverlay) => {
@@ -878,49 +792,74 @@
                 showOverlay(paymentSuccessOverlay);
             };
 
-            confirmQrisPaymentButton.addEventListener('click', () => handleConfirmPayment(qrisPaymentOverlay));
-            confirmDanaPaymentButton.addEventListener('click', () => handleConfirmPayment(danaPaymentOverlay));
-            confirmOvoPaymentButton.addEventListener('click', () => handleConfirmPayment(ovoPaymentOverlay));
-            confirmGopayPaymentButton.addEventListener('click', () => handleConfirmPayment(gopayPaymentOverlay));
+            if (confirmQrisPaymentButton) {
+                confirmQrisPaymentButton.addEventListener('click', () => handleConfirmPayment(qrisPaymentOverlay));
+            }
+            if (confirmDanaPaymentButton) {
+                confirmDanaPaymentButton.addEventListener('click', () => handleConfirmPayment(danaPaymentOverlay));
+            }
+            if (confirmOvoPaymentButton) {
+                confirmOvoPaymentButton.addEventListener('click', () => handleConfirmPayment(ovoPaymentOverlay));
+            }
+            if (confirmGopayPaymentButton) {
+                confirmGopayPaymentButton.addEventListener('click', () => handleConfirmPayment(gopayPaymentOverlay));
+            }
 
 
             // Close buttons for payment detail overlays
-            closeQrisPaymentButton.addEventListener('click', () => {
-                hideOverlay(qrisPaymentOverlay);
-            });
-            closeDanaPaymentButton.addEventListener('click', () => {
-                hideOverlay(danaPaymentOverlay);
-            });
-            closeOvoPaymentButton.addEventListener('click', () => {
-                hideOverlay(ovoPaymentOverlay);
-            });
-            closeGopayPaymentButton.addEventListener('click', () => {
-                hideOverlay(gopayPaymentOverlay);
-            });
+            if (closeQrisPaymentButton) {
+                closeQrisPaymentButton.addEventListener('click', () => {
+                    hideOverlay(qrisPaymentOverlay);
+                });
+            }
+            if (closeDanaPaymentButton) {
+                closeDanaPaymentButton.addEventListener('click', () => {
+                    hideOverlay(danaPaymentOverlay);
+                });
+            }
+            if (closeOvoPaymentButton) { // Corrected usage
+                closeOvoPaymentButton.addEventListener('click', () => {
+                    hideOverlay(ovoPaymentOverlay);
+                });
+            }
+            if (closeGopayPaymentButton) { // Corrected usage
+                closeGopayPaymentButton.addEventListener('click', () => {
+                    hideOverlay(gopayPaymentOverlay);
+                });
+            }
 
             // Event Listener for Payment Success Overlay
-            whatsappAdminButton.addEventListener('click', () => {
-                window.open('https://wa.me/6285773105536', '_blank');
-            });
+            if (whatsappAdminButton) {
+                whatsappAdminButton.addEventListener('click', () => {
+                    window.open('https://wa.me/6285773105536', '_blank');
+                });
+            }
 
-            closePaymentSuccessButton.addEventListener('click', () => {
-                hideOverlay(paymentSuccessOverlay);
-                showOverlay(ratingCommentOverlay); // Show rating modal after success is closed
-            });
+            if (closePaymentSuccessButton) {
+                closePaymentSuccessButton.addEventListener('click', () => {
+                    hideOverlay(paymentSuccessOverlay);
+                    showOverlay(ratingCommentOverlay); // Show rating modal after success is closed
+                });
+            }
 
             // Event Listener for Rating and Comment Overlay
-            submitRatingButton.addEventListener('click', () => {
-                const currentRating = document.querySelector('.store-rating').dataset.rating;
-                const comment = ratingCommentInput.value.trim();
-                console.log(`Rating Toko: ${currentRating} bintang`);
-                console.log(`Komentar: ${comment}`);
-                alert('Terima kasih atas rating dan komentar Anda!'); // Use custom message box in real app
-                hideOverlay(ratingCommentOverlay);
-            });
+            if (submitRatingButton) {
+                submitRatingButton.addEventListener('click', () => {
+                    const currentRatingContainer = document.querySelector('.store-rating');
+                    const currentRating = currentRatingContainer ? currentRatingContainer.dataset.rating : '0';
+                    const comment = ratingCommentInput ? ratingCommentInput.value.trim() : '';
+                    console.log(`Rating Toko: ${currentRating} bintang`);
+                    console.log(`Komentar: ${comment}`);
+                    showCustomMessageBox("Rating Terkirim", "Terima kasih atas rating dan komentar Anda!");
+                    hideOverlay(ratingCommentOverlay);
+                });
+            }
 
-            skipRatingButton.addEventListener('click', () => {
-                hideOverlay(ratingCommentOverlay);
-            });
+            if (skipRatingButton) {
+                skipRatingButton.addEventListener('click', () => {
+                    hideOverlay(ratingCommentOverlay);
+                });
+            }
 
             // Event Listener for desktop navigation links to scroll smoothly
             desktopNavLinks.forEach(link => {
@@ -936,22 +875,55 @@
                 });
             });
 
-            // Event Listener for "Tambah ke Keranjang" buttons
+            // Event Listener for "Tambah ke Keranjang" buttons to show product action overlay
             addToCartButtons.forEach(button => {
+                // Check if the button is disabled (e.g., "Produk Habis")
+                if (button.disabled) {
+                    return; // Skip adding event listener for disabled buttons
+                }
+
                 button.addEventListener('click', (e) => {
                     const productId = e.currentTarget.dataset.productId;
                     const productName = e.currentTarget.dataset.productName;
                     const productPrice = parseFloat(e.currentTarget.dataset.productPrice);
                     const productImage = e.currentTarget.dataset.productImage;
 
-                    addToCart({
-                        id: productId,
-                        name: productName,
-                        price: productPrice,
-                        image: productImage
-                    });
+                    // Populate product action overlay
+                    if (productActionImage) productActionImage.src = productImage;
+                    if (productActionImage) productActionImage.alt = productName;
+                    if (productActionName) productActionName.textContent = productName;
+                    if (productActionPrice) productActionPrice.textContent = `Rp ${productPrice.toLocaleString('id-ID')}`;
+
+                    // Set up buttons in the product action overlay
+                    if (productActionAddToCartButton) {
+                        productActionAddToCartButton.onclick = () => {
+                            addToCart({ id: productId, name: productName, price: productPrice, image: productImage });
+                            hideOverlay(productActionOverlay);
+                            renderCart(); // Render cart to show newly added item
+                            showOverlay(cartPageOverlay); // Show cart after adding
+                        };
+                    }
+
+                    if (productActionBuyNowButton) {
+                        productActionBuyNowButton.onclick = () => {
+                            // Clear cart and add only this product, then proceed to payment
+                            cartItems = [{ id: productId, name: productName, price: productPrice, image: productImage, quantity: 1 }];
+                            renderCart(); // Update cart display with only this item
+                            hideOverlay(productActionOverlay);
+                            showOverlay(paymentSelectionOverlay);
+                        };
+                    }
+
+                    showOverlay(productActionOverlay);
                 });
             });
+
+            if (closeProductActionOverlayButton) {
+                closeProductActionOverlayButton.addEventListener('click', () => {
+                    hideOverlay(productActionOverlay);
+                });
+            }
+
 
             // Initial render of the cart (will show empty)
             renderCart();
@@ -963,9 +935,11 @@
             // Hide splash screen after content is loaded or a timeout
             window.addEventListener('load', () => {
                 setTimeout(() => {
-                    splashScreen.classList.add('hidden');
-                    document.body.style.overflow = ''; // Restore body scroll after splash screen
-                }, 1500); // 0.5 second delay for splash screen (faster)
+                    if (splashScreen) {
+                        splashScreen.classList.add('hidden');
+                        document.body.style.overflow = ''; // Restore body scroll after splash screen
+                    }
+                }, 1500); // 1.5 second delay for splash screen
             });
         });
     </script>
